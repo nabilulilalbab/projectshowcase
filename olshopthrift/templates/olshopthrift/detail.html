@@ -1,0 +1,31 @@
+<!-- detail.html -->
+
+{% extends "base.html" %}
+
+{% block title %}
+{{ detail.judul }} - Detail
+{% endblock title %}
+
+{% block content %}
+<main class="container mx-auto mt-10 p-4 md:p-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 xl:gap-8">
+        <div class="col-span-1 md:col-span-1">
+            <img src="{{ detail.images.url }}" alt="{{ detail.judul }}" class="w-full h-48 object-cover rounded-lg shadow-md md:h-60 lg:h-72 xl:h-96 max-w-md mx-auto">
+        </div>
+        <div class="col-span-2 md:col-span-2">
+            <h1 class="text-2xl font-bold mb-2 text-dark md:text-3xl lg:text-4xl">{{ detail.judul }}</h1>
+            <p class="text-lg font-medium mb-4 text-dark md:text-xl lg:text-2xl">Rp. {{ detail.harga }}</p>
+            <p class="text-dark mb-4 md:text-lg lg:text-xl">{{ detail.description }}</p>
+            <a href="https://wa.me/6287742028130?text=Hello%2C%20I%20want%20to%20checkout%20the%20following%20product%3A%20%0A%0AProduct%3A%20{{ detail.judul }}%0APrice%3A%20Rp.%20{{ detail.harga }}%0ADescription%3A%20{{ detail.description }}%0A%0AThank%20you!" target="_blank">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    check out via WhatsApp
+                </button>
+            </a>
+            
+            
+            <!-- Checkout via WhatsApp Button -->
+
+        </div>
+    </div>
+</main>
+{% endblock content %}
