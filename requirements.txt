@@ -21,7 +21,6 @@ jaraco.classes==3.3.0
 jeepney==0.8.0
 keyring==24.2.0
 more-itertools==10.1.0
-msgpack==1.0.7
 packaging==24.1
 pexpect==4.9.0
 pillow==10.4.0
