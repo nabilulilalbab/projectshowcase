@@ -28,10 +28,11 @@ SECRET_KEY = 'django-insecure-b*9(ki5r*%ppbdm)6!2+hv8@r0=xmiu^wxdz0!9r*3k0o&fv&d
 
 DEBUG = False
 CSRF_COOKIE_SECURE = True
-ALLOWED_HOSTS = ["ootdindo.nabiel.biz.id", "localhost"]
+ALLOWED_HOSTS = ["ootdindo.nabiel.biz.id", "localhost","*"]
 CSRF_TRUSTED_ORIGINS = [
     "https://ootdindo.nabiel.biz.id",
-    "http://localhost"
+    "http://localhost",
+    "127.1.0.0"
 ]
 
 
@@ -45,10 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'olshopthrift',
-<<<<<<< HEAD
-=======
-    'ckeditor'
->>>>>>> d30c2cb (Initial commit)
 ]
 
 MIDDLEWARE = [
