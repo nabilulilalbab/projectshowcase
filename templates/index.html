@@ -6,14 +6,22 @@
 {% block content %} 
 
 <!-- Hero Section -->
+<<<<<<< HEAD
 <header class="bg-gray-900 text-white text-center py-20">
     <div class="container mx-auto">
         <h1 class="text-4xl font-bold mb-2">Welcome to Thrift Shop</h1>
         <p class="text-xl">Find your favorite thrift items at unbeatable prices</p>
+=======
+<header class="bg-base-100 text-base-content text-center py-20">
+    <div class="container mx-auto">
+        <h1 class="text-4xl font-bold mb-4 text-primary">Welcome to Nabiel Shop</h1>
+        <p class="text-xl text-base-content/80">Find your favorite items at unbeatable prices</p>
+>>>>>>> d30c2cb (Initial commit)
     </div>
 </header>
 
 <!-- New Arrivals -->
+<<<<<<< HEAD
 <section class="py-12 bg-gray-800 text-white">
     <div class="container mx-auto px-4">
         <h2 class="text-2xl font-bold mb-6">New Arrivals</h2>
@@ -25,6 +33,44 @@
                     <h3 class="text-lg font-semibold mb-2">{{ product.judul }}</h3>
                     <p class="text-gray-300 mb-4">Rp. {{ product.harga }}</p>
                     <a href="{% url 'olshopthrift:detail' product.slug_prdt %}" class="text-blue-400 hover:underline">View Details</a>
+=======
+<section class="py-12 bg-base-200">
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-6 text-base-content">New Style</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {% for product in latest_products %}
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                <figure class="relative">
+                    <img 
+                        src="{{ product.images.url }}" 
+                        alt="{{ product.judul }}" 
+                        class="w-full h-52 object-cover"
+                    >
+                    {% if product.diskon %}
+                    <div class="badge badge-primary absolute top-2 right-2">
+                        {{ product.diskon }}% OFF
+                    </div>
+                    {% endif %}
+                </figure>
+                <div class="card-body">
+                    <h3 class="card-title text-base-content">{{ product.judul }}</h3>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-bold">Rp. {{ product.harga }}</span>
+                        {% if product.harga_asli %}
+                        <span class="text-base-content/50 line-through text-sm">
+                            Rp. {{ product.harga_asli }}
+                        </span>
+                        {% endif %}
+                    </div>
+                    <div class="card-actions justify-end mt-2">
+                        <a 
+                            href="{% url 'olshopthrift:detail' product.slug_prdt %}" 
+                            class="btn btn-primary btn-sm"
+                        >
+                            View Details
+                        </a>
+                    </div>
+>>>>>>> d30c2cb (Initial commit)
                 </div>
             </div>
             {% endfor %}

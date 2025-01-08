@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'olshopthrift',
+<<<<<<< HEAD
+=======
+    'ckeditor'
+>>>>>>> d30c2cb (Initial commit)
 ]
 
 MIDDLEWARE = [
